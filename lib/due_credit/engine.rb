@@ -1,13 +1,13 @@
 module DueCredit
   class Engine < Rails::Engine
 
-    initialize "due_credit.load_app_instance_data" do |app|
+    initializer "due_credit.load_app_instance_data" do |app|
       DueCredit.setup do |config|
         config.app_root = app.root
       end
     end
 
-    initialize "due_credit.load_static_assets" do |app|
+    initializer "due_credit.load_static_assets" do |app|
       app.middleware.use ::ActionDispatch::Static, "#{root}/public"
     end
 
