@@ -4,6 +4,7 @@ class CreateDueCreditTables < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.string :name
       t.integer :threshold
+      t.string :endpoint
       t.timestamps
     end
 
