@@ -12,27 +12,29 @@ class CreateDueCreditTables < ActiveRecord::Migration
       t.string :token
       t.string :model
       t.integer :model_id
-      t.references :campaigns
+      t.references :campaign
       t.timestamps
     end
 
     create_table :referrals do |t|
-      t.references :referrers
+      t.references :referrer
       t.timestamps
     end
 
     add_index :campaigns, :name
     add_index :referrers, :token
-    add_index :referrals, :referrers_id
+    add_index :referrals, :referrer_id
   end
 
   def self.down
+
+    remove_index :campaigns, :name
+    remove_index :referrers, :token
+    remove_index :referrals, :referrer_id
+
     drop_table :campaigns
     drop_table :referrers
     drop_table :referrals
 
-    remove_index :campaigns, :name
-    remove_index :referrers, :token
-    remove_index :referrals, :referrers_id
   end
 end
