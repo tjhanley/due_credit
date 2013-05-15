@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version = DueCredit::VERSION
   s.authors = [ "Thomas Hanley" ]
   s.email = [ "tjhanleyx@gmail.com" ]
-  s.homepage = "http://github.com/tjhanley"
+  s.homepage = "https://github.com/tjhanley/due_credit"
   s.summary = "#{s.name}-#{s.version}"
   s.description = "The system will give the user credit for the referral. You can set a threshold on a campaign so the user gets full credit"
   #s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
