@@ -3,7 +3,7 @@ class CreateDueCreditTables < ActiveRecord::Migration
   def self.up
     create_table :campaigns do |t|
       t.string :name
-      t.integer :threshold
+      t.integer :threshold, :default => 0
       t.string :endpoint
       t.timestamps
     end
