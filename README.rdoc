@@ -27,8 +27,12 @@ Or install it yourself as:
 # From your app
 
     DueCredit::Campaign.create!(name: 'something', threshold: 5, endpoint: '/welcome')
-    DueCredit::Referrer.create!(campaign: DueCredit::Campaign.first, token: 'unique-token-1234', model: 'User', model_id: User.first.id)
+    DueCredit::Referrer.create!(campaign: DueCredit::Campaign.first, model: 'User', model_id: User.first.id)
     DueCredit::Referral.create!(referrer: DueCredit::Referrer.first)
+
+Alternatively you can put in a Rails initializer something like this
+
+    $due_credit_campaign = DueCredit::Campaign.where(name:'Product Announce', endpoint: '/').first_or_create
 
 # Routes added
 

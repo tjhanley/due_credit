@@ -1,3 +1,6 @@
+# Create Campaigns for attribution for your sharing
+#
+
 module DueCredit
   class Campaign < ActiveRecord::Base
     attr_accessible :name, :threshold, :endpoint

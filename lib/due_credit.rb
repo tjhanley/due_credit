@@ -1,6 +1,7 @@
 # CURRENT FILE :: lib/due_credit.rb
 # Requires
 require "active_support/dependencies"
+require "securerandom"
 module DueCredit
   # Our host application root path
   # We set this when the engine is initialized
