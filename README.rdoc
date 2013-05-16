@@ -1,8 +1,8 @@
-# DueCredit
+#== DueCredit
 
 A rails engine to give credit to your users for referring people back to your site. For instance if you have someone sign up, you give them a unique link back to your site for them to share on Twitter, Facebook, Emails, etc.
 
-## Installation
+##== Installation
 
 Add this line to your application's Gemfile:
 
@@ -16,15 +16,15 @@ Or install it yourself as:
 
     $ gem install due_credit
 
-## Usage
+##== Usage
 
-# Generate the migrations
+Generate the migrations
 
     $ bundle exec rails g due_credit
 
-# Run the migration. This should create the following tables: Campaigns, Referrers, Referrals
+Run the migration. This should create the following tables: Campaigns, Referrers, Referrals
 
-# From your app
+From your app
 
     DueCredit::Campaign.create!(name: 'something', threshold: 5, endpoint: '/welcome')
     DueCredit::Referrer.create!(campaign: DueCredit::Campaign.first, model: 'User', model_id: User.first.id)
@@ -34,19 +34,19 @@ Alternatively you can put in a Rails initializer something like this
 
     $due_credit_campaign = DueCredit::Campaign.where(name:'Product Announce', endpoint: '/').first_or_create
 
-# Routes added
+Routes added
 
     get "due-credit/:token" => "due_credit/credit#click_through" , :as => :due_credit
 
-## TODO
+##== TODO
 
 A shit ton. basic link through working.
 
-## Reference
+##== Reference
 
 http://coding.smashingmagazine.com/2011/06/23/a-guide-to-starting-your-own-rails-engine-gem/
 
-## Contributing
+##== Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
